@@ -273,6 +273,17 @@ With full training:
   - Transducer: 4-8 hours (GPU)
 - **Inference**: ~0.5-2 seconds per sentence (with LLM)
 
+
+
+
+
+
+https://github.com/user-attachments/assets/3ef9b90a-cc23-4672-b718-bbd8fa5bda6a
+
+
+
+
+
 ## References
 
 1. EOLE: https://github.com/eole-nlp/eole
