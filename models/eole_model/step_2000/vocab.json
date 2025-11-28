@@ -1,0 +1,29 @@
+{
+  "src": [
+    "<unk>",
+    "<blank>",
+    "<s>",
+    "</s>",
+    "averyunlikelytoken0",
+    "averyunlikelytoken1",
+    "averyunlikelytoken2",
+    "averyunlikelytoken3"
+  ],
+  "tgt": [
+    "<unk>",
+    "<blank>",
+    "<s>",
+    "</s>",
+    "averyunlikelytoken0",
+    "averyunlikelytoken1",
+    "averyunlikelytoken2",
+    "averyunlikelytoken3"
+  ],
+  "decoder_start_token": "<s>",
+  "specials": {
+    "unk_token": "<unk>",
+    "pad_token": "<blank>",
+    "bos_token": "<s>",
+    "eos_token": "</s>"
+  }
+}

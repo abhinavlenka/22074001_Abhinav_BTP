@@ -1,0 +1,27 @@
+================================================================================
+ENGLISH-HINDI MT EVALUATION REPORT
+================================================================================
+
+Evaluation Details:
+  Date:          2025-11-27T19:46:38.599838
+  Source File:   data/iitb_test_1000.en
+  Reference:     data/iitb_test_1000.hi
+  Sentences:     1,000
+  Stages Used:   [1, 2, 3, 4]
+
+================================================================================
+EVALUATION METRICS
+================================================================================
+
+BLEU Score (SacreBLEU):
+  Overall Score:     32.49
+
+Character F2 Score:
+  F2 Score:          76.39%
+  Precision:         80.59%
+  Recall:            74.21%
+
+Word Error Rate:
+  WER:               33.47%
+
+

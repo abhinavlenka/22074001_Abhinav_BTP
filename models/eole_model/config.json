@@ -1,0 +1,132 @@
+{
+  "tgt_vocab": "models/spm.hi.vocab",
+  "src_words_min_frequency": 1,
+  "transforms": [
+    "sentencepiece",
+    "filtertoolong"
+  ],
+  "seed": 1234,
+  "save_data": "data/eole_vocab",
+  "report_every": 100,
+  "overwrite": true,
+  "n_sample": 0,
+  "src_vocab_size": 32000,
+  "src_vocab": "models/spm.en.vocab",
+  "vocab_size_multiple": 8,
+  "log_file": "logs/eole_train.log",
+  "tensorboard_log_dir": "logs/tensorboard",
+  "tensorboard": true,
+  "valid_metrics": [
+    "BLEU"
+  ],
+  "tensorboard_log_dir_dated": "logs/tensorboard/Nov-27_13-56-11",
+  "tgt_vocab_size": 32000,
+  "tgt_words_min_frequency": 1,
+  "training": {
+    "model_path": "models/eole_model",
+    "accum_steps": [
+      0
+    ],
+    "batch_size": 2048,
+    "warmup_steps": 8000,
+    "early_stopping": 0,
+    "normalization": "tokens",
+    "label_smoothing": 0.1,
+    "valid_steps": 5000,
+    "early_stopping_criteria": null,
+    "batch_type": "tokens",
+    "param_init_method": "xavier_uniform",
+    "learning_rate": 2.0,
+    "keep_checkpoint": 10,
+    "decay_method": "noam",
+    "optim": "adam",
+    "attention_dropout": [
+      0.1
+    ],
+    "adam_beta2": 0.998,
+    "max_grad_norm": 0.0,
+    "dropout_steps": [
+      0
+    ],
+    "world_size": 1,
+    "save_checkpoint_steps": 5000,
+    "valid_batch_size": 1024,
+    "gpu_ranks": [
+      0
+    ],
+    "dropout": [
+      0.1
+    ],
+    "batch_size_multiple": 1,
+    "accum_count": [
+      8
+    ],
+    "train_steps": 2000,
+    "adam_beta1": 0.9
+  },
+  "transforms_configs": {
+    "sentencepiece": {
+      "src_subword_model": "${MODEL_PATH}/spm.en.model",
+      "tgt_subword_model": "${MODEL_PATH}/spm.hi.model"
+    },
+    "filtertoolong": {
+      "tgt_seq_length": 200,
+      "src_seq_length": 200
+    }
+  },
+  "model": {
+    "hidden_size": 512,
+    "layers": 6,
+    "heads": 8,
+    "transformer_ff": 2048,
+    "position_encoding_type": "SinusoidalInterleaved",
+    "architecture": "transformer",
+    "decoder": {
+      "hidden_size": 512,
+      "layers": 6,
+      "heads": 8,
+      "transformer_ff": 2048,
+      "tgt_word_vec_size": 512,
+      "n_positions": null,
+      "position_encoding_type": "SinusoidalInterleaved",
+      "decoder_type": "transformer"
+    },
+    "embeddings": {
+      "word_vec_size": 512,
+      "src_word_vec_size": 512,
+      "tgt_word_vec_size": 512,
+      "position_encoding_type": "SinusoidalInterleaved"
+    },
+    "encoder": {
+      "hidden_size": 512,
+      "layers": 6,
+      "heads": 8,
+      "encoder_type": "transformer",
+      "transformer_ff": 2048,
+      "n_positions": null,
+      "position_encoding_type": "SinusoidalInterleaved",
+      "src_word_vec_size": 512
+    }
+  },
+  "data": {
+    "corpus_1": {
+      "weight": 1,
+      "path_tgt": "data/train.hi",
+      "path_src": "data/train.en",
+      "path_align": null,
+      "transforms": [
+        "sentencepiece",
+        "filtertoolong"
+      ]
+    },
+    "valid": {
+      "path_tgt": "data/dev.hi",
+      "path_src": "data/dev.en",
+      "path_align": null,
+      "transforms": [
+        "sentencepiece",
+        "filtertoolong"
+      ]
+    }
+  }
+}
